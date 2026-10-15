@@ -1,0 +1,6 @@
+# Store every file exactly as it is on disk, with no line-ending conversion.
+#
+# The .cmd files need CRLF and the rest are a mix, and all of it works as it
+# stands. Git for Windows converts line endings by default, and a download
+# from GitHub would then not be byte-for-byte what was tested here.
+* -text

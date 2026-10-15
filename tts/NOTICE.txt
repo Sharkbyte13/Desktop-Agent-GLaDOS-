@@ -1,0 +1,39 @@
+THIRD-PARTY COMPONENTS
+======================
+
+This folder vendors code and uses a model that other people wrote. Their
+licenses are included here and their terms apply to those parts.
+
+
+utils/  -- text cleaning, number expansion, phoneme tokenizer
+-----------------------------------------------------------
+Taken from the glados-tts project (https://github.com/R2D2FISH/glados-tts),
+by way of https://github.com/HelgeSverre/glados.
+MIT License, Copyright (c) 2022 Timmy Knight.  See LICENSE.glados-tts.txt
+
+utils/text/ derives in turn from Keith Ito's tacotron text utilities.
+MIT License, Copyright (c) 2017 Keith Ito.  See LICENSE.keithito.txt
+
+Changes made here:
+  - removed recipes.py, which imported utils.files (a module that does not
+    exist in the source repo) along with pandas and tqdm
+  - nothing else; the remaining files are unmodified
+
+
+models/  -- the voice
+---------------------
+Downloaded at setup time from the glados-tts project's model archive.
+These weights are NOT covered by the MIT license above; that license covers
+source code. The model was trained on the voice performance of the character
+from the Portal games, which is a real performer's voice. Treat the output
+accordingly: this is a personal, local, non-distributed toy. Do not publish
+audio it generates, pass it off as a real person speaking, or use it
+commercially.
+
+
+daemon.py, setup_tts.ps1, start-tts.vbs, the .cmd files
+-------------------------------------------------------
+Written for this project. The HTTP service, caching, model normalization and
+installer logic are not from the upstream repos - upstream's own HTTP server
+(engine.py) imports a function its own glados.py no longer defines, and does
+not run.

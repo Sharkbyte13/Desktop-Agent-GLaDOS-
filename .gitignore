@@ -1,0 +1,60 @@
+# What stays on this machine and never goes to GitHub.
+#
+# Three reasons a file is here: it is rebuilt by a setup script, it is not ours
+# to redistribute, or it records something about the person running her - what
+# was said in the room, what is on the disk, which games are installed.
+
+# --- Python environments --------------------------------------------------
+# Rebuilt by each Setup-*.cmd. They are also tied to the Python install and the
+# folder path of the machine that made them, so a copied one does not work.
+.venv/
+__pycache__/
+*.pyc
+
+# --- The voice model ------------------------------------------------------
+# tts\Setup-TTS.cmd downloads it from the glados-tts project. The weights are
+# not covered by the MIT licence (see tts\NOTICE.txt), and two of the files are
+# over GitHub's 100 MB limit anyway.
+tts/models/
+tts/models.zip
+
+# --- Speech she has generated ---------------------------------------------
+tts/cache/
+tts/say.wav
+
+# --- Settings and state she writes for herself ----------------------------
+# config.json can hold an Anthropic API key in plain text. The defaults live in
+# glados.ps1, so a missing file costs nothing.
+config.json
+config.json.bak*
+games.json
+brain/brain-config.json
+brain/timers.json
+brain/notes.json
+brain/*.bak
+voice/voice-config.json
+voice/state.json
+voice/followup.json
+voice/glow.json
+voice/*.lock
+*.pid
+*.tmp
+
+# --- What she heard, saw and logged ---------------------------------------
+voice/inbox/
+voice/wake-audio/
+voice/models/
+eye/frames/
+*.log
+
+# --- Troubleshooting output -----------------------------------------------
+# Hardware, user name and folder paths.
+startup-error.txt
+diagnose.txt
+amsi-probe.txt
+commit_probe.txt
+probe/system-probe.txt
+
+# --- Retired animation frames ---------------------------------------------
+# install.ps1 moves superseded frames here; nothing loads them.
+assets/old_frames/

@@ -1,0 +1,48 @@
+{
+  "_comment": [
+    "Ways of getting her attention, and how she takes it.",
+    "",
+    "Every phrase must contain her name in some form - that is what keeps an",
+    "open microphone from answering the television. Spelling does not matter:",
+    "the matcher already knows Gladys, glad us, gladiss, glottis and the rest,",
+    "so write the name as 'glados' and say it however you like.",
+    "",
+    "Filler words - please, just, now, uh - are ignored, so do not build a",
+    "phrase out of them: 'please glados' is heard as plain 'glados'.",
+    "",
+    "mood decides which of her replies you get. Known moods: neutral, casual,",
+    "woken, morning, evening, checking, polite, curt. Anything else falls back",
+    "to neutral. Edit this file and she picks it up within a few seconds - no",
+    "restart, no retraining, no Colab notebook.",
+    "",
+    "Deleting a line removes that way in. Adding one adds it."
+  ],
+  "phrases": [
+    { "match": "hey glados",           "mood": "neutral" },
+    { "match": "hi glados",            "mood": "neutral" },
+    { "match": "hello glados",         "mood": "neutral" },
+    { "match": "okay glados",          "mood": "neutral" },
+    { "match": "yo glados",            "mood": "casual" },
+    { "match": "hey there glados",     "mood": "casual" },
+
+    { "match": "wake up glados",       "mood": "woken" },
+    { "match": "glados wake up",       "mood": "woken" },
+    { "match": "you awake glados",     "mood": "woken" },
+    { "match": "are you awake glados", "mood": "woken" },
+
+    { "match": "good morning glados",  "mood": "morning" },
+    { "match": "morning glados",       "mood": "morning" },
+    { "match": "good evening glados",  "mood": "evening" },
+    { "match": "good night glados",    "mood": "evening" },
+
+    { "match": "are you there glados", "mood": "checking" },
+    { "match": "glados are you there", "mood": "checking" },
+    { "match": "you there glados",     "mood": "checking" },
+    { "match": "glados you listening", "mood": "checking" },
+
+    { "match": "excuse me glados",     "mood": "polite" },
+    { "match": "sorry glados",         "mood": "polite" },
+
+    { "match": "glados",               "mood": "curt" }
+  ]
+}
